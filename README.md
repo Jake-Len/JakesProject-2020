@@ -3,11 +3,8 @@
  
  GymBuddie App update (Jan 29, 2019)
  
- UI building
-  Menu options
-  Homepage
-  Sign in
-  Workout page layout
+ UI building: menu options, homepage, sign in, workout page layout
 
  Named app
+ 
  New notfication ideas thanks to brainstorm with friends
