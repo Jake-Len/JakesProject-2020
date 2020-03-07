@@ -13,3 +13,5 @@
  
  Removed login screen, will add when UI is finished and database is set up (probably après-cours)
  
+ GymBuddie App Update (Mar 7, 2020):
+ Removed card system, set up menus.  Will begin adding pages and AVkit work
