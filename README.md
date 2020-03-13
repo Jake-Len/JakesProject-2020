@@ -15,3 +15,6 @@
  
  GymBuddie App Update (Mar 7, 2020):
  Removed card system, set up menus.  Will begin adding pages and AVkit work
+ 
+ GymBuddie App Update (Mar 12, 2020):
+ Added cool menu button, deciding on location.  Working on links in menu (running innto some issues with linking in a list format?)
