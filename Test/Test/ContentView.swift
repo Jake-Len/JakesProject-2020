@@ -1,0 +1,110 @@
+//
+//  ContentView.swift
+//  Test
+//
+//  Created by Jacob Leonard on 2/25/20.
+//  Copyright © 2020 Jacob Leonard. All rights reserved.
+//
+
+import SwiftUI
+
+struct MenuContent: View {
+    var body: some View{
+        NavigationView{
+            List{
+                Text("MENU").fontWeight(.bold).onTapGesture {
+                    print("MENU")
+                }.font(.system(.largeTitle))
+                    //link to home page
+                    NavigationLink(destination: Home()) {
+                       Text("Home").fontWeight(.bold).onTapGesture {
+                       print("Home")
+                    }
+                }
+                    //link to workout page, possible submenu but that may get clutterey
+                    NavigationLink(destination: WorkoutList()) {
+                        Text("Workouts").fontWeight(.bold).onTapGesture {
+                        print("Workouts")
+                    }
+                }
+                    //link to settings page
+                    NavigationLink(destination: Settings()) {
+                        Text("Settings").fontWeight(.bold).onTapGesture {
+                        print("Settings")
+                    }
+                }
+                    //future: link to account page
+                    NavigationLink(destination: Account()) {
+                        Text("Account").fontWeight(.bold).onTapGesture {
+                        print("Account")
+                    }
+                }
+            }
+        }
+    }
+}
+
+struct menu: View {
+    let width: CGFloat
+    let isOpen: Bool
+    let menuClose: () -> Void
+    
+    var body: some View {
+        ZStack{
+            //NavigationView{
+                GeometryReader{ g in
+                    EmptyView()
+                }
+                .background(Color.gray.opacity(0.3))
+                .opacity(self.isOpen ? 1.0 : 0.0)
+                .animation(Animation.easeIn.delay(0.25))
+                .onTapGesture {
+                    self.menuClose()
+                }
+                
+                HStack{
+                    MenuContent()
+                        .frame(width: self.width)
+                        .background(Color.white)
+                        .offset(x: self.isOpen ? 0: -self.width)
+                        .animation(.default)
+                    Spacer()
+            }
+        }
+    }
+}
+
+struct ContentView: View {
+    @State var menuOpen: Bool = false
+    
+    var body: some View {
+        GeometryReader{ s in
+            ZStack(alignment: .bottomTrailing){
+                if !self.menuOpen{
+                    Button(action: {
+                        self.openMenu()
+                    }) {
+                        Image(systemName: "plus.circle.fill")
+                        .resizable()
+                            .frame(width:80, height:80)
+                            .foregroundColor((Color(.darkGray)))
+                            .padding()
+                    }
+                }
+                menu(width: s.size.width, isOpen: self.menuOpen, menuClose: self.openMenu)
+            }.frame(alignment: .bottom)
+            
+        }
+    }
+    func openMenu(){
+        self.menuOpen.toggle()
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
+
+

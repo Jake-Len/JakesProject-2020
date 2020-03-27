@@ -18,3 +18,6 @@
  
  GymBuddie App Update (Mar 12, 2020):
  Added cool menu button, deciding on location.  Working on links in menu (running innto some issues with linking in a list format?)
+ 
+ GymBuddie App Update (Mar 27, 2020):
+ Moved fresh version of gymbuddie into git, adjusted menu to push views over home instead of on to home.

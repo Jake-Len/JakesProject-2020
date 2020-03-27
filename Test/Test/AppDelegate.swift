@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  GymBuddie
+//  Test
 //
-//  Created by Jacob Leonard on 1/29/20.
+//  Created by Jacob Leonard on 2/25/20.
 //  Copyright © 2020 Jacob Leonard. All rights reserved.
 //
 
