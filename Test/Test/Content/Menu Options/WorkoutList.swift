@@ -16,12 +16,12 @@ struct WorkoutList: View {
             }.font(.system(.largeTitle))
                 //link to chest workouts
                     NavigationLink(destination: ChestWorkouts()) {
-                        Text("Chest").fontWeight(.bold).onTapGesture {
+                        Text("Push").fontWeight(.bold).onTapGesture {
                         print("Chest")
                     }
                 }//link to back workouts
                     NavigationLink(destination: BackWorkouts()) {
-                        Text("Back").fontWeight(.bold).onTapGesture {
+                        Text("Pull").fontWeight(.bold).onTapGesture {
                         print("Back")
                     }
                 }//link to leg workouts
@@ -30,8 +30,7 @@ struct WorkoutList: View {
                         print("Legs")
                     }
                 }
-        }
-    }
+        }.environment(\.defaultMinListRowHeight, 90)    }
 }
 
 struct WorkoutList_Previews: PreviewProvider {

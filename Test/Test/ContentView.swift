@@ -39,7 +39,7 @@ struct MenuContent: View {
                         print("Account")
                     }
                 }
-            }
+            }.environment(\.defaultMinListRowHeight, 90)
         }
     }
 }
