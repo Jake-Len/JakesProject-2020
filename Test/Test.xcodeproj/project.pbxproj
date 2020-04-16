@@ -17,11 +17,8 @@
 		237657C12405989300AA1BCF /* VideoControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237657C02405989300AA1BCF /* VideoControl.swift */; };
 		23B03B1B24117CA900F7C460 /* WorkoutList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B03B1A24117CA900F7C460 /* WorkoutList.swift */; };
 		23B03B1F241A9C0B00F7C460 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B03B1E241A9C0B00F7C460 /* Home.swift */; };
-		23B03B222427CF5800F7C460 /* ChestWorkouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B03B212427CF5800F7C460 /* ChestWorkouts.swift */; };
 		23B03B242427D0A400F7C460 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B03B232427D0A400F7C460 /* Settings.swift */; };
 		23B03B262427D0B000F7C460 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B03B252427D0B000F7C460 /* Account.swift */; };
-		23B03B292427D0ED00F7C460 /* BackWorkouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B03B282427D0ED00F7C460 /* BackWorkouts.swift */; };
-		23B03B2B2427D0F800F7C460 /* LegWorkouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B03B2A2427D0F800F7C460 /* LegWorkouts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,11 +34,8 @@
 		237657C02405989300AA1BCF /* VideoControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoControl.swift; sourceTree = "<group>"; };
 		23B03B1A24117CA900F7C460 /* WorkoutList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutList.swift; sourceTree = "<group>"; };
 		23B03B1E241A9C0B00F7C460 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
-		23B03B212427CF5800F7C460 /* ChestWorkouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChestWorkouts.swift; sourceTree = "<group>"; };
 		23B03B232427D0A400F7C460 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		23B03B252427D0B000F7C460 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
-		23B03B282427D0ED00F7C460 /* BackWorkouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackWorkouts.swift; sourceTree = "<group>"; };
-		23B03B2A2427D0F800F7C460 /* LegWorkouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegWorkouts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,19 +105,8 @@
 				23B03B1A24117CA900F7C460 /* WorkoutList.swift */,
 				23B03B232427D0A400F7C460 /* Settings.swift */,
 				23B03B252427D0B000F7C460 /* Account.swift */,
-				23B03B272427D0D000F7C460 /* Workouts Submenu */,
 			);
 			path = "Menu Options";
-			sourceTree = "<group>";
-		};
-		23B03B272427D0D000F7C460 /* Workouts Submenu */ = {
-			isa = PBXGroup;
-			children = (
-				23B03B212427CF5800F7C460 /* ChestWorkouts.swift */,
-				23B03B282427D0ED00F7C460 /* BackWorkouts.swift */,
-				23B03B2A2427D0F800F7C460 /* LegWorkouts.swift */,
-			);
-			path = "Workouts Submenu";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,13 +183,10 @@
 				237657A82405977B00AA1BCF /* AppDelegate.swift in Sources */,
 				23B03B1B24117CA900F7C460 /* WorkoutList.swift in Sources */,
 				237657C12405989300AA1BCF /* VideoControl.swift in Sources */,
-				23B03B222427CF5800F7C460 /* ChestWorkouts.swift in Sources */,
 				237657BD2405984000AA1BCF /* CircleImage.swift in Sources */,
 				23B03B262427D0B000F7C460 /* Account.swift in Sources */,
-				23B03B2B2427D0F800F7C460 /* LegWorkouts.swift in Sources */,
 				237657AA2405977B00AA1BCF /* SceneDelegate.swift in Sources */,
 				23B03B242427D0A400F7C460 /* Settings.swift in Sources */,
-				23B03B292427D0ED00F7C460 /* BackWorkouts.swift in Sources */,
 				237657AC2405977B00AA1BCF /* ContentView.swift in Sources */,
 				23B03B1F241A9C0B00F7C460 /* Home.swift in Sources */,
 			);

@@ -12,30 +12,29 @@ struct MenuContent: View {
     var body: some View{
         NavigationView{
             List{
-                Text("MENU").fontWeight(.bold).onTapGesture {
-                    print("MENU")
-                }.font(.system(.largeTitle))
+                Text("MENU").fontWeight(.bold)
+                .font(.system(.largeTitle))
                     //link to home page
-                    NavigationLink(destination: Home()) {
-                       Text("Home").fontWeight(.bold).onTapGesture {
+                    NavigationLink(destination: ContentView()) {
+                       Text("Home").bold().onTapGesture {
                        print("Home")
                     }
                 }
                     //link to workout page, possible submenu but that may get clutterey
                     NavigationLink(destination: WorkoutList()) {
-                        Text("Workouts").fontWeight(.bold).onTapGesture {
+                        Text("Workouts").bold().onTapGesture {
                         print("Workouts")
                     }
                 }
                     //link to settings page
                     NavigationLink(destination: Settings()) {
-                        Text("Settings").fontWeight(.bold).onTapGesture {
+                        Text("Settings").bold().onTapGesture {
                         print("Settings")
                     }
                 }
                     //future: link to account page
                     NavigationLink(destination: Account()) {
-                        Text("Account").fontWeight(.bold).onTapGesture {
+                        Text("Account").bold().onTapGesture {
                         print("Account")
                     }
                 }
