@@ -8,30 +8,50 @@
 
 import SwiftUI
 
-struct WorkoutList: View {
+
+struct WorkoutList: View {//variables
     //chest
-    @State var BPNumber: String = ""
-    @State var GoalBPNumber: String = ""
-    @State var BPProg: String = "0"
-    
-    @State var DPNumber: String = ""
-    @State var GoalDPNumber: String = ""
-    @State var DPProg: String = "0"
-    
-    @State var GoalPUNumber: String = ""
-    @State var PUNumber: String = ""
-    @State var PUProg: String = "0"
-    
-    @State var GoalFLNumber: String = ""
-    @State var FLNumber: String = ""
-    @State var FLProg: String = "0"
-    
+    @State var BenchPressNumber: String = ""
+    @State var GoalBenchPressNumber: String = ""
+    @State var BenchPressProg: String = "0"
+
+    @State var DumbbellPressNumber: String = ""
+    @State var GoalDumbbellPressNumber: String = ""
+    @State var DumbbellPressProg: String = "0"
+
+    @State var GoalPushupNumber: String = ""
+    @State var PushupNumber: String = ""
+    @State var PushupProg: String = "0"
+
+    @State var GoalFlyNumber: String = ""
+    @State var FlyNumber: String = ""
+    @State var FlyProg: String = "0"
+
     //back
     @State var DeadliftNumber: String = ""
     @State var GoalDeadliftNumber: String = ""
     @State var DeadliftProg: String = "0"
-    
+
+    @State var BarbellRowNumber: String = "0"
+    @State var GoalBarbellRowNumber: String = "0"
+    @State var BarbellRowProg: String = "0"
+
+    @State var PullupNumber: String = "0"
+    @State var GoalPullupNumber: String = "0"
+    @State var PullupProg: String = "0"
+
+    @State var DumbbellRowNumber: String = "0"
+    @State var GoalDumbbellRowNumber: String = "0"
+    @State var DumbbellRowProg: String = "0"
+
     //legs
+    @State var SquatNumber: String = "0"
+    @State var GoalSquatNumber: String = "0"
+    @State var SquatProg: String = "0"
+
+    @State var LegPressNumber: String = "0"
+    @State var GoalLegPressNumber: String = "0"
+    @State var LegPressProg: String = "0"
     
     var body: some View {
 
@@ -42,22 +62,21 @@ struct WorkoutList: View {
                     print("WORKOUTS")
                 }.font(.system(.largeTitle))
             }
-            
+//--------------------------------------------
+            //chest
             VStack{
-                Text("Chest").fontWeight(.bold).font(.system(size: 32))
+                Text("Chest").fontWeight(.bold).font(.system(size: 32)).padding()
             }
-                    
-            //pushup
             HStack{
                 VStack(alignment: .leading){
                 Text("Bench Press").fontWeight(.bold)
                     .multilineTextAlignment(.leading)
                     
-                    TextField("Goal Weight", text: $GoalBPNumber)
+                    TextField("Goal Weight", text: $GoalBenchPressNumber)
                         .keyboardType(.numberPad)
                         .multilineTextAlignment(.leading)
                     
-                    TextField("Current Weight", text: $BPNumber)
+                    TextField("Current Weight", text: $BenchPressNumber)
                         .keyboardType(.numberPad)
                         .multilineTextAlignment(.leading)
                     
@@ -65,7 +84,7 @@ struct WorkoutList: View {
                     
                     
                 }
-                HStack(alignment: .center){ Text("\(BPProg)%").bold().font(.system(size: 40))
+                HStack(alignment: .center){ Text("\(BenchPressProg)%").bold().font(.system(size: 40))
                     .multilineTextAlignment(.trailing)
                 }
                 
@@ -78,11 +97,11 @@ struct WorkoutList: View {
                 Text("Dumbbell Press").fontWeight(.bold)
                     .multilineTextAlignment(.leading)
                     
-                    TextField("Goal Weight", text: $GoalDPNumber)
+                    TextField("Goal Weight", text: $GoalDumbbellPressNumber)
                         .keyboardType(.numberPad)
                         .multilineTextAlignment(.leading)
                     
-                    TextField("Current Weight", text: $DPNumber)
+                    TextField("Current Weight", text: $DumbbellPressNumber)
                         .keyboardType(.numberPad)
                         .multilineTextAlignment(.leading)
                     
@@ -90,7 +109,7 @@ struct WorkoutList: View {
                     
                     
                 }
-                HStack(alignment: .center){ Text("\(PUProg)%").bold().font(.system(size: 40))
+                HStack(alignment: .center){ Text("\(DumbbellPressProg)%").bold().font(.system(size: 40))
                     .multilineTextAlignment(.trailing)
                 }
                 
@@ -102,11 +121,11 @@ struct WorkoutList: View {
                 Text("Pushups").fontWeight(.bold)
                     .multilineTextAlignment(.leading)
                     
-                    TextField("Goal Reps", text: $GoalPUNumber)
+                    TextField("Goal Reps", text: $GoalPushupNumber)
                         .keyboardType(.numberPad)
                         .multilineTextAlignment(.leading)
                     
-                    TextField("Current Reps", text: $PUNumber)
+                    TextField("Current Reps", text: $PushupNumber)
                         .keyboardType(.numberPad)
                         .multilineTextAlignment(.leading)
                     
@@ -114,7 +133,7 @@ struct WorkoutList: View {
                     
                     
                 }
-                HStack(alignment: .center){ Text("\(PUProg)%").bold().font(.system(size: 40))
+                HStack(alignment: .center){ Text("\(PushupProg)%").bold().font(.system(size: 40))
                     .multilineTextAlignment(.trailing)
                 }
                 
@@ -126,11 +145,11 @@ struct WorkoutList: View {
                 Text("Flies").fontWeight(.bold)
                     .multilineTextAlignment(.leading)
                     
-                    TextField("Goal Weight", text: $GoalFLNumber)
+                    TextField("Goal Weight", text: $GoalFlyNumber)
                         .keyboardType(.numberPad)
                         .multilineTextAlignment(.leading)
                     
-                    TextField("Current Weight", text: $FLNumber)
+                    TextField("Current Weight", text: $FlyNumber)
                         .keyboardType(.numberPad)
                         .multilineTextAlignment(.leading)
                     
@@ -138,13 +157,16 @@ struct WorkoutList: View {
                     
                     
                 }
-                HStack(alignment: .center){ Text("\(FLProg)%").bold().font(.system(size: 40))
+                HStack(alignment: .center){ Text("\(FlyProg)%").bold().font(.system(size: 40))
                     .multilineTextAlignment(.trailing)
                 }
                 
             }.environment(\.defaultMinListRowHeight, 90)
+
+//--------------------------------------------
+            //Back
             VStack {
-                Text("Back").fontWeight(.bold).font(.system(size: 32))
+                Text("Back").fontWeight(.bold).font(.system(size: 32)).padding()
             }
             
             HStack{
@@ -173,11 +195,11 @@ struct WorkoutList: View {
                     Text("Barbell Rows").fontWeight(.bold)
                     .multilineTextAlignment(.leading)
                     
-                    TextField("Goal Weight", text: $GoalFLNumber)
+                    TextField("Goal Weight", text: $GoalBarbellRowNumber)
                         .keyboardType(.numberPad)
                         .multilineTextAlignment(.leading)
                     
-                    TextField("Current Weight", text: $FLNumber)
+                    TextField("Current Weight", text: $BarbellRowNumber)
                         .keyboardType(.numberPad)
                         .multilineTextAlignment(.leading)
                     
@@ -185,7 +207,7 @@ struct WorkoutList: View {
                 
                 
             }
-            HStack(alignment: .center){ Text("\(FLProg)%").bold().font(.system(size: 40))
+            HStack(alignment: .center){ Text("\(BarbellRowProg)%").bold().font(.system(size: 40))
                 .multilineTextAlignment(.trailing)
             }
         }
@@ -194,11 +216,11 @@ struct WorkoutList: View {
                     Text("Pull Ups").fontWeight(.bold)
                         .multilineTextAlignment(.leading)
                 
-                    TextField("Goal Weight", text: $GoalFLNumber)
+                    TextField("Goal Weight", text: $GoalPullupNumber)
                     .keyboardType(.numberPad)
                     .multilineTextAlignment(.leading)
                 
-                    TextField("Current Weight", text: $FLNumber)
+                    TextField("Current Weight", text: $PullupNumber)
                     .keyboardType(.numberPad)
                     .multilineTextAlignment(.leading)
                 
@@ -206,32 +228,79 @@ struct WorkoutList: View {
                 
                 
                 }
-                HStack(alignment: .center){ Text("\(FLProg)%").bold().font(.system(size: 40))
+                HStack(alignment: .center){ Text("\(PullupProg)%").bold().font(.system(size: 40))
                 .multilineTextAlignment(.trailing)
                 }
             }
+            
             HStack{
                 VStack(alignment: .leading){
                     Text("Dumbbell Rows").fontWeight(.bold)
                         .multilineTextAlignment(.leading)
                         
-                        TextField("Goal Weight", text: $GoalFLNumber)
+                        TextField("Goal Weight", text: $GoalDumbbellRowNumber)
                             .keyboardType(.numberPad)
                             .multilineTextAlignment(.leading)
                         
-                        TextField("Current Weight", text: $FLNumber)
+                        TextField("Current Weight", text: $DumbbellRowNumber)
                             .keyboardType(.numberPad)
                             .multilineTextAlignment(.leading)
                         
                         //progress bar location
                 }
-                HStack(alignment: .center){ Text("\(FLProg)%").bold().font(.system(size: 40))
+                HStack(alignment: .center){ Text("\(DumbbellRowProg)%").bold().font(.system(size: 40))
+                    .multilineTextAlignment(.trailing)
+                }
+            }
+//--------------------------------------------
+            //legs
+            VStack {
+                Text("Legs").fontWeight(.bold).font(.system(size: 32)).padding()
+            }
+            
+            HStack{
+            VStack(alignment: .leading){
+                Text("Squat").fontWeight(.bold)
+                    .multilineTextAlignment(.leading)
+                    
+                    TextField("Goal Weight", text: $GoalSquatNumber)
+                        .keyboardType(.numberPad)
+                        .multilineTextAlignment(.leading)
+                    
+                    TextField("Current Weight", text: $SquatNumber)
+                        .keyboardType(.numberPad)
+                        .multilineTextAlignment(.leading)
+                    
+                    //progress bar location
+            }
+            HStack(alignment: .center){ Text("\(SquatProg)%").bold().font(.system(size: 40))
+                .multilineTextAlignment(.trailing)
+            }
+        }
+            
+        HStack{
+                VStack(alignment: .leading){
+                    Text("LegPress").fontWeight(.bold)
+                        .multilineTextAlignment(.leading)
+                        
+                        TextField("Goal Weight", text: $GoalLegPressNumber)
+                            .keyboardType(.numberPad)
+                            .multilineTextAlignment(.leading)
+                        
+                        TextField("Current Weight", text: $LegPressNumber)
+                            .keyboardType(.numberPad)
+                            .multilineTextAlignment(.leading)
+                        
+                        //progress bar location
+                }
+                HStack(alignment: .center){ Text("\(LegPressProg)%").bold().font(.system(size: 40))
                     .multilineTextAlignment(.trailing)
                 }
             }
         }
     }
 }
+
 
 struct WorkoutList_Previews: PreviewProvider {
     static var previews: some View {
