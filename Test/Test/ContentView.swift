@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+//Menu Stuff
 struct MenuContent: View {
     var body: some View{
         NavigationView{
@@ -76,25 +77,37 @@ struct menu: View {
 struct ContentView: View {
     @State var menuOpen: Bool = false
     
+    @State var ProgressValue: Float = 0.0
+    
     var body: some View {
-        GeometryReader{ s in
-            ZStack(alignment: .bottomTrailing){
-                if !self.menuOpen{
-                    Button(action: {
-                        self.openMenu()
-                    }) {
-                        Image(systemName: "plus.circle.fill")
-                        .resizable()
-                            .frame(width:80, height:80)
-                            .foregroundColor((Color(.darkGray)))
-                            .padding()
-                    }
-                }
-                menu(width: s.size.width, isOpen: self.menuOpen, menuClose: self.openMenu)
-            }.frame(alignment: .bottom)
+        
+        HStack{
+            VStack{
+                ProgressBar(value: $ProgressValue).frame(height:20)
+                Spacer()
+            }
             
+            
+            GeometryReader{ s in
+                ZStack(alignment: .bottomTrailing){
+                    if !self.menuOpen{
+                        Button(action: {
+                            self.openMenu()
+                        }) {
+                            Image(systemName: "plus.circle.fill")
+                            .resizable()
+                                .frame(width:80, height:80)
+                                .foregroundColor((Color(.darkGray)))
+                                .padding()
+                        }
+                    }
+                    menu(width: s.size.width, isOpen: self.menuOpen, menuClose: self.openMenu)
+                }.frame(alignment: .bottom)
+
+            }
         }
     }
+    
     func openMenu(){
         self.menuOpen.toggle()
     }
