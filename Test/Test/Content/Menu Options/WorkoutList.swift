@@ -11,252 +11,224 @@ import SwiftUI
 
 struct WorkoutList: View {//variables
     //chest
-    @State var BenchPressNumber: String = ""
-    @State var GoalBenchPressNumber: String = ""
-    @State var BenchPressProg: String = "0"
+    @State var BenchPressNumber: Int = 165
+    @State var GoalBenchPressNumber: Int = 225
 
-    @State var DumbbellPressNumber: String = ""
-    @State var GoalDumbbellPressNumber: String = ""
-    @State var DumbbellPressProg: String = "0"
+    @State var DumbbellPressNumber: Int = 50
+    @State var GoalDumbbellPressNumber: Int = 70
 
-    @State var GoalPushupNumber: String = ""
-    @State var PushupNumber: String = ""
-    @State var PushupProg: String = "0"
+    @State var GoalPushupNumber: Int = 1
+    @State var PushupNumber: Int = 1
 
-    @State var GoalFlyNumber: String = ""
-    @State var FlyNumber: String = ""
-    @State var FlyProg: String = "0"
+    @State var GoalFlyNumber: Int = 1
+    @State var FlyNumber: Int = 1
 
     //back
-    @State var DeadliftNumber: String = ""
-    @State var GoalDeadliftNumber: String = ""
-    @State var DeadliftProg: String = "0"
+    @State var DeadliftNumber: Int = 1
+    @State var GoalDeadliftNumber: Int = 1
 
-    @State var BarbellRowNumber: String = "0"
-    @State var GoalBarbellRowNumber: String = "0"
-    @State var BarbellRowProg: String = "0"
+    @State var BarbellRowNumber: Int = 1
+    @State var GoalBarbellRowNumber: Int = 1
 
-    @State var PullupNumber: String = "0"
-    @State var GoalPullupNumber: String = "0"
-    @State var PullupProg: String = "0"
+    @State var PullupNumber: Int = 1
+    @State var GoalPullupNumber: Int = 1
 
-    @State var DumbbellRowNumber: String = "0"
-    @State var GoalDumbbellRowNumber: String = "0"
-    @State var DumbbellRowProg: String = "0"
-
-    //legs
-    @State var SquatNumber: String = "0"
-    @State var GoalSquatNumber: String = "0"
-    @State var SquatProg: String = "0"
-
-    @State var LegPressNumber: String = "0"
-    @State var GoalLegPressNumber: String = "0"
-    @State var LegPressProg: String = "0"
+//    @State var DumbbellRowNumber: Int = 0
+//    @State var GoalDumbbellRowNumber: Int = 0
+//    @State var DumbbellRowProg: String = "0"
+//
+//    //legs
+//    @State var SquatNumber: Int = 0
+//    @State var GoalSquatNumber: Int = 0
+//    @State var SquatProg: String = "0"
+//
+//    @State var LegPressNumber: Int = 0
+//    @State var GoalLegPressNumber: Int = 0
+//    @State var LegPressProg: String = "0"
     
     var body: some View {
-
-        
         List{
-            VStack{
-                Text("WORKOUTS").bold().onTapGesture {
-                    print("WORKOUTS")
-                }.font(.system(.largeTitle))
-            }
 //--------------------------------------------
             //chest
-//            VStack{
-//                Text("Chest").fontWeight(.bold).font(.system(size: 32)).padding()
-//            }
-//            HStack{
-//                VStack(alignment: .leading){
-//                Text("Bench Press").fontWeight(.bold)
-//                    .multilineTextAlignment(.leading)
-//
-//                    TextField("Goal Weight", text: $GoalBenchPressNumber)
-//                        .keyboardType(.numberPad)
-//                        .multilineTextAlignment(.leading)
-//
-//                    TextField("Current Weight", text: $BenchPressNumber)
-//                        .keyboardType(.numberPad)
-//                        .multilineTextAlignment(.leading)
-//
-//                    //progress bar location
-//
-//
-//                }
-//                HStack(alignment: .center){ Text("\(BenchPressProg)%").bold().font(.system(size: 40))
-//                    .multilineTextAlignment(.trailing)
-//                }
-//
-//            }.environment(\.defaultMinListRowHeight, 90)
-//
-//            //dumbbell
-//
-//            HStack{
-//                VStack(alignment: .leading){
-//                Text("Dumbbell Press").fontWeight(.bold)
-//                    .multilineTextAlignment(.leading)
-//
-//                    TextField("Goal Weight", text: $GoalDumbbellPressNumber)
-//                        .keyboardType(.numberPad)
-//                        .multilineTextAlignment(.leading)
-//
-//                    TextField("Current Weight", text: $DumbbellPressNumber)
-//                        .keyboardType(.numberPad)
-//                        .multilineTextAlignment(.leading)
-//
-//                    //progress bar location
-//
-//
-//                }
-//                HStack(alignment: .center){ Text("\(DumbbellPressProg)%").bold().font(.system(size: 40))
-//                    .multilineTextAlignment(.trailing)
-//                }
-//
-//            }.environment(\.defaultMinListRowHeight, 90)
-//
-//            //pushup
-//            HStack{
-//                VStack(alignment: .leading){
-//                Text("Pushups").fontWeight(.bold)
-//                    .multilineTextAlignment(.leading)
-//
-//                    TextField("Goal Reps", text: $GoalPushupNumber)
-//                        .keyboardType(.numberPad)
-//                        .multilineTextAlignment(.leading)
-//
-//                    TextField("Current Reps", text: $PushupNumber)
-//                        .keyboardType(.numberPad)
-//                        .multilineTextAlignment(.leading)
-//
-//                    //progress bar location
-//
-//
-//                }
-//                HStack(alignment: .center){ Text("\(PushupProg)%").bold().font(.system(size: 40))
-//                    .multilineTextAlignment(.trailing)
-//                }
-//
-//            }.environment(\.defaultMinListRowHeight, 90)
-//
-//            //pushup
-//            HStack{
-//                VStack(alignment: .leading){
-//                Text("Flies").fontWeight(.bold)
-//                    .multilineTextAlignment(.leading)
-//
-//                    TextField("Goal Weight", text: $GoalFlyNumber)
-//                        .keyboardType(.numberPad)
-//                        .multilineTextAlignment(.leading)
-//
-//                    TextField("Current Weight", text: $FlyNumber)
-//                        .keyboardType(.numberPad)
-//                        .multilineTextAlignment(.leading)
-//
-//                    //progress bar location
-//
-//
-//                }
-//                HStack(alignment: .center){ Text("\(FlyProg)%").bold().font(.system(size: 40))
-//                    .multilineTextAlignment(.trailing)
-//                }
-//
-//            }.environment(\.defaultMinListRowHeight, 90)
-//
-////--------------------------------------------
-//            //Back
-//            VStack {
-//                Text("Back").fontWeight(.bold).font(.system(size: 32)).padding()
-//            }
-//
-//            HStack{
-//                VStack(alignment: .leading){
-//                Text("Deadlift").fontWeight(.bold)
-//                    .multilineTextAlignment(.leading)
-//
-//                    TextField("Goal Weight", text: $GoalDeadliftNumber)
-//                        .keyboardType(.numberPad)
-//                        .multilineTextAlignment(.leading)
-//
-//                    TextField("Current Weight", text: $DeadliftNumber)
-//                        .keyboardType(.numberPad)
-//                        .multilineTextAlignment(.leading)
-//
-//                    //progress bar location
-//
-//
-//                }
-//                HStack(alignment: .center){ Text("\(DeadliftProg)%").bold().font(.system(size: 40))
-//                    .multilineTextAlignment(.trailing)
-//                }
-//            }
-//
-//            HStack{
-//                VStack(alignment: .leading){
-//                    Text("Barbell Rows").fontWeight(.bold)
-//                    .multilineTextAlignment(.leading)
-//
-//                    TextField("Goal Weight", text: $GoalBarbellRowNumber)
-//                        .keyboardType(.numberPad)
-//                        .multilineTextAlignment(.leading)
-//
-//                    TextField("Current Weight", text: $BarbellRowNumber)
-//                        .keyboardType(.numberPad)
-//                        .multilineTextAlignment(.leading)
-//
-//                    //progress bar location
-//
-//
-//            }
-//            HStack(alignment: .center){ Text("\(BarbellRowProg)%").bold().font(.system(size: 40))
-//                .multilineTextAlignment(.trailing)
-//            }
-//        }
+            VStack{
+                Text("Chest").fontWeight(.bold).font(.system(size: 32)).padding()
+            }
+            HStack{
+                VStack(alignment: .leading){
+                Text("Bench Press").fontWeight(.bold)
+                    .multilineTextAlignment(.leading)
+                    
+                    TextField("Current Weight", value: $BenchPressNumber, formatter: NumberFormatter())
+                    .keyboardType(.numberPad)
+                    .multilineTextAlignment(.leading)
+
+                    TextField("Goal Weight", value: $GoalBenchPressNumber, formatter: NumberFormatter())
+                        .keyboardType(.numberPad)
+                        .multilineTextAlignment(.leading)
+
+                    
+
+                    //progress bar location
+
+
+                }
+                HStack(alignment: .center){ Text("\((BenchPressNumber / GoalBenchPressNumber)*100)%").bold().font(.system(size: 40))
+                    .multilineTextAlignment(.trailing)
+                }
+
+            }.environment(\.defaultMinListRowHeight, 90)
+
+            //dumbbell
+
+            HStack{
+                VStack(alignment: .leading){
+                Text("Dumbbell Press").fontWeight(.bold)
+                    .multilineTextAlignment(.leading)
+
+                    TextField("Current Weight", value: $DumbbellPressNumber, formatter: NumberFormatter())
+                        .keyboardType(.numberPad)
+                        .multilineTextAlignment(.leading)
+                    
+                    TextField("Goal Weight", value: $GoalDumbbellPressNumber, formatter: NumberFormatter())
+                    .keyboardType(.numberPad)
+                    .multilineTextAlignment(.leading)
+
+                    //progress bar location
+
+
+                }
+                HStack(alignment: .center){ Text("\((DumbbellPressNumber / GoalDumbbellPressNumber)*100)%").bold().font(.system(size: 40))
+                    .multilineTextAlignment(.trailing)
+                }
+
+            }.environment(\.defaultMinListRowHeight, 90)
+
+            //pushup
+            HStack{
+                VStack(alignment: .leading){
+                Text("Pushups").fontWeight(.bold)
+                    .multilineTextAlignment(.leading)
+                    
+                    TextField("Current Reps", value: $PushupNumber, formatter: NumberFormatter())
+                    .keyboardType(.numberPad)
+                    .multilineTextAlignment(.leading)
+
+                    TextField("Goal Reps", value: $GoalPushupNumber, formatter: NumberFormatter())
+                        .keyboardType(.numberPad)
+                        .multilineTextAlignment(.leading)
+
+                    
+
+                    //progress bar location
+
+
+                }
+                HStack(alignment: .center){ Text("\((PushupNumber / GoalPushupNumber)*100)%").bold().font(.system(size: 40))
+                    .multilineTextAlignment(.trailing)
+                }
+
+            }.environment(\.defaultMinListRowHeight, 90)
+
+            //pushup
+            HStack{
+                VStack(alignment: .leading){
+                Text("Flies").fontWeight(.bold)
+                    .multilineTextAlignment(.leading)
+
+                    TextField("Goal Weight", value: $GoalFlyNumber, formatter: NumberFormatter())
+                        .keyboardType(.numberPad)
+                        .multilineTextAlignment(.leading)
+
+                    TextField("Current Weight", value: $FlyNumber, formatter: NumberFormatter())
+                        .keyboardType(.numberPad)
+                        .multilineTextAlignment(.leading)
+
+                    //progress bar location
+
+
+                }
+                HStack(alignment: .center){ Text("\((FlyNumber/GoalFlyNumber)*100)%").bold().font(.system(size: 40))
+                    .multilineTextAlignment(.trailing)
+                }
+
+            }.environment(\.defaultMinListRowHeight, 90)
+        
+
+//--------------------------------------------
+            //Back
+
+            VStack {
+                Text("Back").fontWeight(.bold).font(.system(size: 32)).padding()
+            }
+
+            HStack{
+                VStack(alignment: .leading){
+                Text("Deadlift").fontWeight(.bold)
+                    .multilineTextAlignment(.leading)
+
+                    TextField("Goal Weight", value: $GoalDeadliftNumber, formatter: NumberFormatter())
+                        .keyboardType(.numberPad)
+                        .multilineTextAlignment(.leading)
+
+                    TextField("Current Weight", value: $DeadliftNumber, formatter: NumberFormatter())
+                        .keyboardType(.numberPad)
+                        .multilineTextAlignment(.leading)
+
+                    //progress bar location
+
+
+                }
+                HStack(alignment: .center){ Text("\((DeadliftNumber/GoalDeadliftNumber)*100)%").bold().font(.system(size: 40))
+                    .multilineTextAlignment(.trailing)
+                }
+            }
+
+                HStack{
+                    VStack(alignment: .leading){
+                        Text("Barbell Rows").fontWeight(.bold)
+                        .multilineTextAlignment(.leading)
+
+                        TextField("Goal Weight", value: $GoalBarbellRowNumber, formatter: NumberFormatter())
+                            .keyboardType(.numberPad)
+                            .multilineTextAlignment(.leading)
+
+                        TextField("Current Weight", value: $BarbellRowNumber, formatter: NumberFormatter())
+                            .keyboardType(.numberPad)
+                            .multilineTextAlignment(.leading)
+
+                        //progress bar location
+
+
+                }
+                HStack(alignment: .center){ Text("\((BarbellRowNumber/GoalBarbellRowNumber)*100)%").bold().font(.system(size: 40))
+                    .multilineTextAlignment(.trailing)
+                }
+            }
             
-//            HStack{
-//                VStack(alignment: .leading){
-//                    Text("Pull Ups").fontWeight(.bold)
-//                        .multilineTextAlignment(.leading)
-//
-//                    TextField("Goal Weight", text: $GoalPullupNumber)
-//                    .keyboardType(.numberPad)
-//                    .multilineTextAlignment(.leading)
-//
-//                    TextField("Current Weight", text: $PullupNumber)
-//                    .keyboardType(.numberPad)
-//                    .multilineTextAlignment(.leading)
-//
-//                //progress bar location
-//
-//
-//                }
-//                HStack(alignment: .center){ Text("\(PullupProg)%").bold().font(.system(size: 40))
-//                .multilineTextAlignment(.trailing)
-//                }
-//            }
+            HStack{
+                VStack(alignment: .leading){
+                    Text("Pull Ups").fontWeight(.bold)
+                        .multilineTextAlignment(.leading)
+
+                    TextField("Goal Weight", value: $GoalPullupNumber, formatter: NumberFormatter())
+                    .keyboardType(.numberPad)
+                    .multilineTextAlignment(.leading)
+
+                    TextField("Current Weight", value: $PullupNumber, formatter: NumberFormatter())
+                    .keyboardType(.numberPad)
+                    .multilineTextAlignment(.leading)
+
+                //progress bar location
+
+
+                }
+                HStack(alignment: .center){ Text("\((PullupNumber/GoalPullupNumber)*100)%").bold().font(.system(size: 40))
+                .multilineTextAlignment(.trailing)
+                }
+            }
             
             //dumbbell row
-//            HStack{
-//                VStack(alignment: .leading){
-//                    Text("Dumbbell Row").fontWeight(.bold)
-//                        .multilineTextAlignment(.leading)
-//
-//                    TextField("Goal Weight", text: $GoalDumbbellRowNumber)
-//                    .keyboardType(.numberPad)
-//                    .multilineTextAlignment(.leading)
-//
-//                    TextField("Current Weight", text: $DumbbellRowNumber)
-//                    .keyboardType(.numberPad)
-//                    .multilineTextAlignment(.leading)
-//
-//                //progress bar location
-//
-//
-//                }
-//                HStack(alignment: .center){ Text("\(DumbbellRowProg)%").bold().font(.system(size: 40))
-//                .multilineTextAlignment(.trailing)
-//                }
-//            }
+        
 
 //--------------------------------------------
             //legs

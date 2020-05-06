@@ -8,31 +8,31 @@
 
 import SwiftUI
 
-struct ProgressBar: View {
-    @Binding var value: Float
-    
-    var body: some View {
-        GeometryReader{ s in
-            ZStack(alignment: .leading){
-                //background
-                Rectangle().frame(width: s.size.width, height: s.size.height)
-                    .opacity(0.3)
-                    .foregroundColor(Color(UIColor.systemTeal))
-                
-                //progress
-                Rectangle().frame(width: min(CGFloat(self.value) * s.size.width, s.size.width), height: s.size.height)
-                    .animation(.linear)
-                    .foregroundColor(Color(UIColor.systemBlue))
-            }.cornerRadius(45.0)
-        }
-    }
-}
-
-struct ProgressBar_Previews: PreviewProvider {
-    static var previews: some View {
-        ProgressBar()
-    }
-}
+//struct ProgressBar: View {
+//    @Binding var value: Float
+//
+//    var body: some View {
+//        GeometryReader{ s in
+//            ZStack(alignment: .leading){
+//                //background
+//                Rectangle().frame(width: s.size.width, height: s.size.height)
+//                    .opacity(0.3)
+//                    .foregroundColor(Color(UIColor.systemTeal))
+//
+//                //progress
+//                Rectangle().frame(width: min(CGFloat(self.value) * s.size.width, s.size.width), height: s.size.height)
+//                    .animation(.linear)
+//                    .foregroundColor(Color(UIColor.systemBlue))
+//            }.cornerRadius(45.0)
+//        }
+//    }
+//}
+//
+//struct ProgressBar_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProgressBar()
+//    }
+//}
 
 //Menu Stuff
 struct MenuContent: View {
@@ -102,16 +102,18 @@ struct menu: View {
 
 struct ContentView: View {
     @State var menuOpen: Bool = false
+    let defaults = UserDefaults.standard
     
+    //let name = defaults.string(forKey: "name")
     @State var ProgressValue: Float = 0.0
     
     var body: some View {
         
-        HStack{
-            VStack{
-                ProgressBar(value: $ProgressValue).frame(height:20)
-                Spacer()
-            }
+        //HStack{
+//            VStack{
+//                ProgressBar(value: $ProgressValue).frame(height:20)
+//                Spacer()
+//            }
             
             
             GeometryReader{ s in
@@ -131,7 +133,7 @@ struct ContentView: View {
                 }.frame(alignment: .bottom)
 
             }
-        }
+        //}
     }
     
     func openMenu(){

@@ -14,7 +14,6 @@
 		237657B12405977D00AA1BCF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 237657B02405977D00AA1BCF /* Preview Assets.xcassets */; };
 		237657B42405977D00AA1BCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 237657B22405977D00AA1BCF /* LaunchScreen.storyboard */; };
 		23B03B1B24117CA900F7C460 /* WorkoutList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B03B1A24117CA900F7C460 /* WorkoutList.swift */; };
-		23B03B1F241A9C0B00F7C460 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B03B1E241A9C0B00F7C460 /* Home.swift */; };
 		23B03B242427D0A400F7C460 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B03B232427D0A400F7C460 /* Settings.swift */; };
 		23B03B262427D0B000F7C460 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B03B252427D0B000F7C460 /* Account.swift */; };
 /* End PBXBuildFile section */
@@ -29,7 +28,6 @@
 		237657B32405977D00AA1BCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		237657B52405977D00AA1BCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23B03B1A24117CA900F7C460 /* WorkoutList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutList.swift; sourceTree = "<group>"; };
-		23B03B1E241A9C0B00F7C460 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		23B03B232427D0A400F7C460 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		23B03B252427D0B000F7C460 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,7 +93,6 @@
 		23B03B202427CF3E00F7C460 /* Menu Options */ = {
 			isa = PBXGroup;
 			children = (
-				23B03B1E241A9C0B00F7C460 /* Home.swift */,
 				23B03B1A24117CA900F7C460 /* WorkoutList.swift */,
 				23B03B232427D0A400F7C460 /* Settings.swift */,
 				23B03B252427D0B000F7C460 /* Account.swift */,
@@ -180,7 +177,6 @@
 				237657AA2405977B00AA1BCF /* SceneDelegate.swift in Sources */,
 				23B03B242427D0A400F7C460 /* Settings.swift in Sources */,
 				237657AC2405977B00AA1BCF /* ContentView.swift in Sources */,
-				23B03B1F241A9C0B00F7C460 /* Home.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
